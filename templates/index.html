@@ -1379,7 +1379,135 @@ button.btn:hover {
         text-align: center; 
     } 
 }
-        </style>
+
+
+
+ .services-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 60px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.header-underline {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(to right, #e74c3c, #3498db);
+    margin: 0 auto 30px;
+}
+
+.description {
+    color: #6c757d;
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.service-card:last-child {
+    border-right: none;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-circle svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+.service-content h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.service-content a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.service-content a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        margin: 100px 20px;
+        padding: 40px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 30px;
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+}
+</style>
     </head>
 
     <body>
@@ -1492,6 +1620,22 @@ button.btn:hover {
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{% static 'img/news-450x350-2.jpg' %}" alt="logo">
+                                    <div class="tn-title">
+                                        <a  href="">Integer hendrerit elit eget purus sodales maximus</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{% static 'img/news-450x350-2.jpg' %}" alt="logo">
+                                    <div class="tn-title">
+                                        <a  href="">Integer hendrerit elit eget purus sodales maximus</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 tn-right">
@@ -1536,12 +1680,78 @@ button.btn:hover {
         </div>
         <!-- Top News End-->
 
+
+    <div class="services-container">
+        <div class="header">
+            <h1>VALUE ADDED SERVICES</h1>
+            <div class="header-underline"></div>
+            <p class="description">
+                We have redefined the best B2B marketplace experience, providing a powerful B2B portal for international trade. From import and export to connecting global buyers and sellers, we go beyond just a platform. With a seamless trade ecosystem providing verified buyers, importers, suppliers, manufacturers & exporters, we help businesses expand globally and unlock new opportunities in international markets.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        <circle cx="18" cy="8" r="2" fill="white"/>
+                        <path d="M22 12c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Verified Buyers</h3>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Membership Plan</h3>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+                        <path d="M7 9h10v2H7zm0-3h10v2H7z"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Online Promotion</h3>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        <circle cx="12" cy="6" r="2" fill="white"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Certificates</h3>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
         <!-- Category News Start-->
         <div class="cat-news">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Sports</h2>
+                        <h2>Agro Products</h2>
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
@@ -1579,7 +1789,7 @@ button.btn:hover {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Sports</h2>
+                        <h2>Garments</h2>
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
@@ -1611,7 +1821,47 @@ button.btn:hover {
             </div>
         </div>
         <!-- Category News End-->
+
         
+        <!-- Category News Start-->
+        <div class="cat-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Rail Products</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{% static 'img/news-350x223-1.jpg' %}" alt="logo">
+                                    <div class="cn-title">
+                                        <a href="">Lorem ipsum dolor sit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{% static 'img/news-350x223-2.jpg' %}" alt="logo">
+                                    <div class="cn-title">
+                                        <a href="">Lorem ipsum dolor sit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{% static 'img/news-350x223-3.jpg' %}" alt="logo">
+                                    <div class="cn-title">
+                                        <a href="">Lorem ipsum dolor sit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Category News End-->
+
+
         <!-- Tab News Start-->
         <div class="tab-news">
             <div class="container">
